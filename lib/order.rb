@@ -83,8 +83,8 @@ class Order
   end
 
   def send_message
-    account_sid = ENV["TWILIO_ACCOUNT_SID"]
-    auth_token = ENV["TWILIO_ACCOUNT_AUTH_TOKEN"]
+    account_sid = TWILIO_ACCOUNT_SID
+    auth_token = TWILIO_ACCOUNT_AUTH_TOKEN
    @client = Twilio::REST::Client.new(account_sid, auth_token)
    message = @client.messages
      .create(
